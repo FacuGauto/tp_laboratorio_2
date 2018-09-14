@@ -40,7 +40,33 @@ namespace Entidades
             return resultado.ToString();
         }
 
-        public DecimalBinario
+        public string DecimalBinario(double d)
+        {
+            string resultado = "";
+            if (d < 0)
+            {
+                return "Valor invalido";
+            }
+            if(d == 0)
+            {
+                return "0";
+            }
+            
+            while(d>0)
+            {
+                if(d % 2 ==0)
+                {
+                    resultado = "0" + resultado;
+                }
+                else
+                {
+                    resultado = "1" + resultado;
+                }
+                d = (int)d / 2;
+            }
+
+            return resultado;
+        }
 
     }
 }
