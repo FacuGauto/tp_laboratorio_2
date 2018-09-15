@@ -72,5 +72,10 @@ namespace MiCalculadora
 
             lblResultado.Text = numero.DecimalBinario(txtNumero1.Text);
         }
+
+        private void LaCalculadora_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
