@@ -20,7 +20,9 @@ namespace MiCalculadora
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Numero numero = new Numero();
 
+            lblResultado.Text = numero.BinarioDecimal(txtNumero1.Text);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -62,6 +64,13 @@ namespace MiCalculadora
 
             resultado = LaCalculadora.Operar(numero1,numero2,operador);
             lblResultado.Text = resultado.ToString();
+        }
+
+        private void btnCovertirABinario_Click(object sender, EventArgs e)
+        {
+            Numero numero = new Numero();
+
+            lblResultado.Text = numero.DecimalBinario(txtNumero1.Text);
         }
     }
 }

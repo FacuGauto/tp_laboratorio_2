@@ -104,6 +104,7 @@
             this.btnCovertirABinario.TabIndex = 6;
             this.btnCovertirABinario.Text = "Covertir a Binario";
             this.btnCovertirABinario.UseVisualStyleBackColor = true;
+            this.btnCovertirABinario.Click += new System.EventHandler(this.btnCovertirABinario_Click);
             // 
             // btnConvertirADecimal
             // 
