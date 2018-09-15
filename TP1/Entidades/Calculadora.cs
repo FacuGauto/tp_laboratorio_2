@@ -10,7 +10,7 @@ namespace Entidades
     {
         public double Operar(Numero num1,Numero num2,String operador)
         {
-            double resultado;
+            double resultado = 0;
             operador = Calculadora.ValidarOperador(operador);
 
             switch (operador)

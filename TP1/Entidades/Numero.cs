@@ -6,10 +6,36 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Numero
+    public class Numero
     {
         private double numero;
 
+        private string SetNumero
+        {
+            set => numero = ValidarNumero(value);
+        }
+
+        public Numero()
+        {
+
+        }
+
+        public Numero(double numero) => this.numero = numero;
+
+        public Numero(string strNumero)
+        {
+            double numero = Convert.ToDouble(strNumero);
+            this.numero = numero;
+        }
+
+        public static double operator -(Numero n1, Numero n2) => n1.numero - n2.numero;
+
+        public static double operator *(Numero n1, Numero n2) => n1.numero* n2.numero;
+
+        public static double operator /(Numero n1, Numero n2) => n1.numero / n2.numero;
+
+        public static double operator + (Numero n1, Numero n2) => n1.numero * n2.numero;
+        
         private double ValidarNumero(string strNumero)
         {
             double numero;
@@ -43,10 +69,11 @@ namespace Entidades
         public string DecimalBinario(double d)
         {
             string resultado = "";
-            if (d < 0)
+            d = Math.Abs(d);
+            /*if (d < 0)
             {
                 return "Valor invalido";
-            }
+            }*/
             if(d == 0)
             {
                 return "0";
@@ -64,6 +91,16 @@ namespace Entidades
                 }
                 d = (int)d / 2;
             }
+
+            return resultado;
+        }
+
+        public string DecimalBinario(string strnumero)
+        {
+            string resultado = "";
+            double numero = Convert.ToDouble(strnumero);
+
+            resultado = DecimalBinario(numero);
 
             return resultado;
         }
