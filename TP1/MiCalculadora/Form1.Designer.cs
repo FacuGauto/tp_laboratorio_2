@@ -121,9 +121,9 @@
             this.lblResultado.AutoSize = true;
             this.lblResultado.Location = new System.Drawing.Point(558, 59);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(35, 13);
+            this.lblResultado.Size = new System.Drawing.Size(55, 13);
             this.lblResultado.TabIndex = 8;
-            this.lblResultado.Text = "label1";
+            this.lblResultado.Text = "Resultado";
             // 
             // LaCalculadora
             // 
