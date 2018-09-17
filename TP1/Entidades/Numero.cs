@@ -49,16 +49,18 @@ namespace Entidades
         public string BinarioDecimal(string binario)
         {
             int resultado = 0;
-            foreach (char b in binario)
+            char[] array = binario.ToCharArray();
+            Array.Reverse(array);
+            foreach (char b in array)
             {
                 if(b != '0' && b != '1')
                 {
                     return "Valor invalido";
                 }
             }
-            for (int i = 0; i < binario.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (binario[i] == '1')
+                if (array[i] == '1')
                 {
                     resultado += (int)Math.Pow(2, i);
                 }

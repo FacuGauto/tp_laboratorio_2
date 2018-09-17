@@ -8,10 +8,10 @@ namespace Entidades
 {
     public class Calculadora
     {
-        public double Operar(Numero num1,Numero num2,String operador)
+        public double Operar(Numero num1,Numero num2,string operador)
         {
-            double resultado = 0;
             operador = Calculadora.ValidarOperador(operador);
+            double resultado = 0;
 
             switch (operador)
             {
