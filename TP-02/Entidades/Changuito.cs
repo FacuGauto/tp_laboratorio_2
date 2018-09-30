@@ -9,7 +9,7 @@ namespace Entidades_2018
     /// <summary>
     /// No podrá tener clases heredadas.
     /// </summary>
-    public class Changuito
+    public sealed class Changuito
     {
         List<Producto> productos;
         int espacioDisponible;
@@ -23,7 +23,7 @@ namespace Entidades_2018
         {
             this.productos = new List<Producto>();
         }
-        public Changuito(int espacioDisponible)
+        public Changuito(int espacioDisponible) :this()
         {
             this.espacioDisponible = espacioDisponible;
         }
@@ -34,7 +34,7 @@ namespace Entidades_2018
         /// Muestro el Changuito y TODOS los Productos
         /// </summary>
         /// <returns></returns>
-        public string ToString()
+        public override string ToString()
         {
             return Changuito.Mostrar(this, ETipo.Todos);
         }
@@ -49,7 +49,7 @@ namespace Entidades_2018
         /// <param name="c">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
         /// <returns></returns>
-        public string Mostrar(Changuito c, ETipo tipo)
+        public static string Mostrar(Changuito c, ETipo tipo)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -74,7 +74,7 @@ namespace Entidades_2018
                 }
             }
 
-            return sb;
+            return sb.ToString();
         }
         #endregion
 
@@ -87,7 +87,7 @@ namespace Entidades_2018
         /// <returns></returns>
         public static Changuito operator +(Changuito c, Producto p)
         {
-            foreach (Producto v in c)
+            foreach (Producto v in c.productos)
             {
                 if (v == p)
                     return c;
@@ -104,7 +104,7 @@ namespace Entidades_2018
         /// <returns></returns>
         public static Changuito operator -(Changuito c, Producto p)
         {
-            foreach (Producto v in c)
+            foreach (Producto v in c.productos)
             {
                 if (v == p)
                 {

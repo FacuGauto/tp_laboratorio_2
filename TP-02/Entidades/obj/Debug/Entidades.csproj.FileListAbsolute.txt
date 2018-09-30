@@ -11,3 +11,9 @@ D:\VisualStudio\Federico Dávila\TP-02\Entidades\bin\Debug\Entidades.pdb
 D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-02\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-02\Entidades\obj\Debug\Entidades.dll
 D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-02\Entidades\obj\Debug\Entidades.pdb
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP-02\Entidades\bin\Debug\Entidades.dll
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP-02\Entidades\bin\Debug\Entidades.pdb
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP-02\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP-02\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP-02\Entidades\obj\Debug\Entidades.dll
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP-02\Entidades\obj\Debug\Entidades.pdb

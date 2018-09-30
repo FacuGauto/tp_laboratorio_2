@@ -8,10 +8,10 @@ using System.Drawing;
 
 namespace Entidades_2018
 {
-    class Leche : Producto
+    public class Leche : Producto
     {
         public enum ETipo { Entera, Descremada }
-        ETipo tipo;
+        private ETipo tipo;
 
         /// <summary>
         /// Por defecto, TIPO será ENTERA
@@ -19,6 +19,12 @@ namespace Entidades_2018
         /// <param name="marca"></param>
         /// <param name="patente"></param>
         /// <param name="color"></param>
+        public Leche(EMarca marca, string patente, ConsoleColor color,ETipo tipo)
+            : base(patente, marca, color)
+        {
+            this.tipo = tipo;
+        }
+
         public Leche(EMarca marca, string patente, ConsoleColor color)
             : base(patente, marca, color)
         {
@@ -32,7 +38,7 @@ namespace Entidades_2018
         {
             get
             {
-                return this.CantidadCalorias;
+                return 20;
             }
         }
 
@@ -41,13 +47,13 @@ namespace Entidades_2018
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("LECHE");
-            sb.AppendLine(this);
-            sb.AppendLine("CALORIAS : {0}", this.CantidadCalorias);
+            sb.AppendLine((string)this);
+            sb.AppendFormat("CALORIAS : {0}", this.CantidadCalorias);
             sb.AppendLine("TIPO : " + this.tipo);
             sb.AppendLine("");
             sb.AppendLine("---------------------");
 
-            return sb;
+            return sb.ToString();
         }
     }
 }

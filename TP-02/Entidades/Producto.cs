@@ -9,40 +9,47 @@ namespace Entidades_2018
     /// <summary>
     /// La clase Producto no deberá permitir que se instancien elementos de este tipo.
     /// </summary>
-    public sealed class Producto
+    public abstract class Producto
     {
-        enum EMarca
+        public enum EMarca
         {
             Serenisima, Campagnola, Arcor, Ilolay, Sancor, Pepsico
         }
-        EMarca marca;
-        string codigoDeBarras;
-        ConsoleColor colorPrimarioEmpaque;
+        private EMarca marca;
+        private string codigoDeBarras;
+        private ConsoleColor colorPrimarioEmpaque;
+
+        public Producto(string patente, EMarca marca, ConsoleColor color)
+        {
+            this.codigoDeBarras = patente; 
+            this.marca = marca;
+            this.colorPrimarioEmpaque = color;
+        }
 
         /// <summary>
         /// ReadOnly: Retornará la cantidad de ruedas del vehículo
         /// </summary>
-        abstract short CantidadCalorias { get; set; }
+        protected abstract short CantidadCalorias { get;}
 
         /// <summary>
         /// Publica todos los datos del Producto.
         /// </summary>
         /// <returns></returns>
-        sealed string Mostrar()
+        public virtual string Mostrar()
         {
-            return this;
+            return (string)this;
         }
-
-        private static explicit operator string(Producto p)
+        
+        public static explicit operator string(Producto p)
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("CODIGO DE BARRAS: {0}\r\n", p.codigoDeBarras);
-            sb.AppendLine("MARCA          : {0}\r\n", p.marca.ToString());
-            sb.AppendLine("COLOR EMPAQUE  : {0}\r\n", p.colorPrimarioEmpaque.ToString());
+            sb.AppendFormat("CODIGO DE BARRAS: {0}\r\n", p.codigoDeBarras);
+            sb.AppendFormat("MARCA          : {0}\r\n", p.marca.ToString());
+            sb.AppendFormat("COLOR EMPAQUE  : {0}\r\n", p.colorPrimarioEmpaque.ToString());
             sb.AppendLine("---------------------");
 
-            return sb;
+            return sb.ToString();
         }
 
         /// <summary>
@@ -63,7 +70,7 @@ namespace Entidades_2018
         /// <returns></returns>
         public static bool operator !=(Producto v1, Producto v2)
         {
-            return (v1.codigoDeBarras == v2.codigoDeBarras);
+            return !(v1 == v2);
         }
     }
 }
