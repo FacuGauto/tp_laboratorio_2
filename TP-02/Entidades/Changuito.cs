@@ -93,7 +93,9 @@ namespace Entidades_2018
                     return c;
             }
 
-            c.productos.Add(p);
+            if(c.productos.Count < c.espacioDisponible)
+                c.productos.Add(p);
+
             return c;
         }
         /// <summary>
@@ -108,6 +110,7 @@ namespace Entidades_2018
             {
                 if (v == p)
                 {
+                    c.productos.Remove(v);
                     break;
                 }
             }
