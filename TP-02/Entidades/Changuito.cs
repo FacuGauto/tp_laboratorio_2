@@ -53,38 +53,38 @@ namespace Entidades_2018
         /// Expone los datos del elemento y su lista (incluidas sus herencias)
         /// SOLO del tipo requerido
         /// </summary>
-        /// <param name="c">Elemento a exponer</param>
+        /// <param name="changuito">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
         /// <returns>string con los datos del changuito y sus productos</returns>
-        public static string Mostrar(Changuito c, ETipo tipo)
+        public static string Mostrar(Changuito changuito, ETipo tipo)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder myStringBuilder = new StringBuilder();
 
-            sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", c.productos.Count, c.espacioDisponible);
-            sb.AppendLine("");
-            foreach (Producto v in c.productos)
+            myStringBuilder.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", changuito.productos.Count, changuito.espacioDisponible);
+            myStringBuilder.AppendLine("");
+            foreach (Producto producto in changuito.productos)
             {
                 switch (tipo)
                 {
                     case ETipo.Snacks:
-                        if (v is Snacks)
-                            sb.AppendLine(v.Mostrar());
+                        if (producto is Snacks)
+                            myStringBuilder.AppendLine(producto.Mostrar());
                         break;
                     case ETipo.Dulce:
-                        if (v is Dulce)
-                            sb.AppendLine(v.Mostrar());
+                        if (producto is Dulce)
+                            myStringBuilder.AppendLine(producto.Mostrar());
                         break;
                     case ETipo.Leche:
-                        if (v is Leche)
-                            sb.AppendLine(v.Mostrar());
+                        if (producto is Leche)
+                            myStringBuilder.AppendLine(producto.Mostrar());
                         break;
                     default:
-                        sb.AppendLine(v.Mostrar());
+                        myStringBuilder.AppendLine(producto.Mostrar());
                         break;
                 }
             }
 
-            return sb.ToString();
+            return myStringBuilder.ToString();
         }
         #endregion
 
@@ -92,40 +92,40 @@ namespace Entidades_2018
         /// <summary>
         /// Agregará un elemento a la lista
         /// </summary>
-        /// <param name="c">Objeto donde se agregará el elemento</param>
-        /// <param name="p">Objeto a agregar</param>
+        /// <param name="chango">Objeto donde se agregará el elemento</param>
+        /// <param name="producto">Objeto a agregar</param>
         /// <returns>Objeto Changuito con un producto agregado</returns>
-        public static Changuito operator +(Changuito c, Producto p)
+        public static Changuito operator +(Changuito chango, Producto producto)
         {
-            foreach (Producto v in c.productos)
+            foreach (Producto v in chango.productos)
             {
-                if (v == p)
-                    return c;
+                if (v == producto)
+                    return chango;
             }
 
-            if(c.productos.Count < c.espacioDisponible)
-                c.productos.Add(p);
+            if(chango.productos.Count < chango.espacioDisponible)
+                chango.productos.Add(producto);
 
-            return c;
+            return chango;
         }
         /// <summary>
         /// Quitará un elemento de la lista
         /// </summary>
-        /// <param name="c">Objeto donde se quitará el elemento</param>
-        /// <param name="p">Objeto a quitar</param>
+        /// <param name="chango">Objeto donde se quitará el elemento</param>
+        /// <param name="producto">Objeto a quitar</param>
         /// <returns>Objeto Changuito con un elemento menos</returns>
-        public static Changuito operator -(Changuito c, Producto p)
+        public static Changuito operator -(Changuito chango, Producto producto)
         {
-            foreach (Producto v in c.productos)
+            foreach (Producto v in chango.productos)
             {
-                if (v == p)
+                if (v == producto)
                 {
-                    c.productos.Remove(v);
+                    chango.productos.Remove(v);
                     break;
                 }
             }
 
-            return c;
+            return chango;
         }
         #endregion
     }

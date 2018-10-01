@@ -20,25 +20,25 @@ namespace TP_02_2018
 
             Changuito changoDeCompras = new Changuito(6);
 
-            Dulce c1 = new Dulce(Producto.EMarca.Sancor, "ASD012", ConsoleColor.Black);
-            Dulce c2 = new Dulce(Producto.EMarca.Ilolay, "ASD913", ConsoleColor.Red);
-            Leche m1 = new Leche(Producto.EMarca.Pepsico, "HJK789", ConsoleColor.White);
-            Leche m2 = new Leche(Producto.EMarca.Serenisima, "IOP852", ConsoleColor.Blue, Leche.ETipo.Descremada);
-            Snacks a1 = new Snacks(Producto.EMarca.Campagnola, "QWE968", ConsoleColor.Gray);
-            Snacks a2 = new Snacks(Producto.EMarca.Arcor, "TYU426", ConsoleColor.DarkBlue);
-            Snacks a3 = new Snacks(Producto.EMarca.Sancor, "IOP852", ConsoleColor.Green);
-            Snacks a4 = new Snacks(Producto.EMarca.Sancor, "TRE321", ConsoleColor.Green);
+            Dulce DulceUno = new Dulce(Producto.EMarca.Sancor, "ASD012", ConsoleColor.Black);
+            Dulce DulceDos = new Dulce(Producto.EMarca.Ilolay, "ASD913", ConsoleColor.Red);
+            Leche LecheUno = new Leche(Producto.EMarca.Pepsico, "HJK789", ConsoleColor.White);
+            Leche LecheDos = new Leche(Producto.EMarca.Serenisima, "IOP852", ConsoleColor.Blue, Leche.ETipo.Descremada);
+            Snacks SnackUno = new Snacks(Producto.EMarca.Campagnola, "QWE968", ConsoleColor.Gray);
+            Snacks SnackDos = new Snacks(Producto.EMarca.Arcor, "TYU426", ConsoleColor.DarkBlue);
+            Snacks SnackTres = new Snacks(Producto.EMarca.Sancor, "IOP852", ConsoleColor.Green);
+            Snacks SnackCuatro = new Snacks(Producto.EMarca.Sancor, "TRE321", ConsoleColor.Green);
 
             // Agrego 8 ítems (los últimos 2 no deberían poder agregarse ni el m1 repetido) y muestro
-            changoDeCompras += c1;
-            changoDeCompras += c2;
-            changoDeCompras += m1;
-            changoDeCompras += m1;
-            changoDeCompras += m2;
-            changoDeCompras += a1;
-            changoDeCompras += a2;
-            changoDeCompras += a3;
-            changoDeCompras += a4;
+            changoDeCompras += DulceUno;
+            changoDeCompras += DulceDos;
+            changoDeCompras += LecheUno;
+            changoDeCompras += LecheUno;
+            changoDeCompras += LecheUno;
+            changoDeCompras += SnackUno;
+            changoDeCompras += SnackDos;
+            changoDeCompras += SnackTres;
+            changoDeCompras += SnackCuatro;
 
             Console.WriteLine(changoDeCompras.ToString());
             Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
@@ -47,7 +47,7 @@ namespace TP_02_2018
             Console.Clear();
 
             // Quito un item y muestro
-            changoDeCompras -= c1;
+            changoDeCompras -= DulceUno;
 
             Console.WriteLine(changoDeCompras.ToString());
             Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");

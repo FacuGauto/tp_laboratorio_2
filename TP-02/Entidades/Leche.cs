@@ -55,16 +55,16 @@ namespace Entidades_2018
         /// <returns>string con los datos del objeto leche</returns>
         public override sealed string Mostrar()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder myStringBuilder = new StringBuilder();
 
-            sb.AppendLine("LECHE");
-            sb.AppendLine((string)this);
-            sb.AppendFormat("CALORIAS : {0}", this.CantidadCalorias);
-            sb.AppendLine("TIPO : " + this.tipo);
-            sb.AppendLine("");
-            sb.AppendLine("---------------------");
+            myStringBuilder.AppendLine("LECHE");
+            myStringBuilder.AppendLine((string)this);
+            myStringBuilder.AppendFormat("CALORIAS : {0}", this.CantidadCalorias);
+            myStringBuilder.AppendLine("TIPO : " + this.tipo);
+            myStringBuilder.AppendLine("");
+            myStringBuilder.AppendLine("---------------------");
 
-            return sb.ToString();
+            return myStringBuilder.ToString();
         }
     }
 }

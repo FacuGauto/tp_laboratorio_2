@@ -49,38 +49,38 @@ namespace Entidades_2018
         /// <summary>
         /// Operador string que devuelve los datos del producto
         /// </summary>
-        /// <param name="p">Objeto de tipo Producto</param>
-        public static explicit operator string(Producto p)
+        /// <param name="producto">Objeto de tipo Producto</param>
+        public static explicit operator string(Producto producto)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder myStringBuilder = new StringBuilder();
 
-            sb.AppendFormat("CODIGO DE BARRAS: {0}\r\n", p.codigoDeBarras);
-            sb.AppendFormat("MARCA          : {0}\r\n", p.marca.ToString());
-            sb.AppendFormat("COLOR EMPAQUE  : {0}\r\n", p.colorPrimarioEmpaque.ToString());
-            sb.AppendLine("---------------------");
+            myStringBuilder.AppendFormat("CODIGO DE BARRAS: {0}\r\n", producto.codigoDeBarras);
+            myStringBuilder.AppendFormat("MARCA          : {0}\r\n", producto.marca.ToString());
+            myStringBuilder.AppendFormat("COLOR EMPAQUE  : {0}\r\n", producto.colorPrimarioEmpaque.ToString());
+            myStringBuilder.AppendLine("---------------------");
 
-            return sb.ToString();
+            return myStringBuilder.ToString();
         }
 
         /// <summary>
         /// Dos productos son iguales si comparten el mismo código de barras
         /// </summary>
-        /// <param name="v1">Objeto de tipo Producto</param>
-        /// <param name="v2">Objeto de tipo Producto</param>
+        /// <param name="productoUno">Objeto de tipo Producto</param>
+        /// <param name="productoDos">Objeto de tipo Producto</param>
         /// <returns>True si tienen el mismo codigo de barras, False si el codigo de barras es distinto</returns>
-        public static bool operator ==(Producto v1, Producto v2)
+        public static bool operator ==(Producto productoUno, Producto productoDos)
         {
-            return (v1.codigoDeBarras == v2.codigoDeBarras);
+            return (productoUno.codigoDeBarras == productoDos.codigoDeBarras);
         }
         /// <summary>
         /// Dos productos son distintos si su código de barras es distinto
         /// </summary>
-        /// <param name="v1">Objeto de tipo Producto</param>
-        /// <param name="v2">Objeto de tipo Producto</param>
+        /// <param name="productoUno">Objeto de tipo Producto</param>
+        /// <param name="productoDos">Objeto de tipo Producto</param>
         /// <returns>True si tienen distinto codigo de barras, False si tienen el mismo codigo de barras</returns>
-        public static bool operator !=(Producto v1, Producto v2)
+        public static bool operator !=(Producto productoUno, Producto productoDos)
         {
-            return !(v1 == v2);
+            return !(productoUno == productoDos);
         }
     }
 }

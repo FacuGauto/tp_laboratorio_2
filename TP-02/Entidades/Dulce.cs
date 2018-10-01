@@ -35,15 +35,15 @@ namespace Entidades_2018
         /// <returns>string con los datos del dulce</returns>
         public override string Mostrar()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder myStringBuilder = new StringBuilder();
 
-            sb.AppendLine("DULCE");
-            sb.AppendLine((string)this);
-            sb.AppendFormat("CALORIAS : {0}", this.CantidadCalorias);
-            sb.AppendLine("");
-            sb.AppendLine("---------------------");
+            myStringBuilder.AppendLine("DULCE");
+            myStringBuilder.AppendLine((string)this);
+            myStringBuilder.AppendFormat("CALORIAS : {0}", this.CantidadCalorias);
+            myStringBuilder.AppendLine("");
+            myStringBuilder.AppendLine("---------------------");
 
-            return sb.ToString();
+            return myStringBuilder.ToString();
         }
     }
 }
