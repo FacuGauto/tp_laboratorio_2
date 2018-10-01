@@ -19,10 +19,17 @@ namespace Entidades_2018
         }
 
         #region "Constructores"
+        /// <summary>
+        /// Constructor de la clase Changuito. Crea la instancia de la lista de tipo Producto
+        /// </summary>
         private Changuito()
         {
             this.productos = new List<Producto>();
         }
+        /// <summary>
+        /// Constructor de la clase Changuito 
+        /// </summary>
+        /// <param name="espacioDisponible">Espacio disponible</param>
         public Changuito(int espacioDisponible) :this()
         {
             this.espacioDisponible = espacioDisponible;
@@ -48,7 +55,7 @@ namespace Entidades_2018
         /// </summary>
         /// <param name="c">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
-        /// <returns></returns>
+        /// <returns>string con los datos del changuito y sus productos</returns>
         public static string Mostrar(Changuito c, ETipo tipo)
         {
             StringBuilder sb = new StringBuilder();
@@ -60,13 +67,16 @@ namespace Entidades_2018
                 switch (tipo)
                 {
                     case ETipo.Snacks:
-                        sb.AppendLine(v.Mostrar());
+                        if (v is Snacks)
+                            sb.AppendLine(v.Mostrar());
                         break;
                     case ETipo.Dulce:
-                        sb.AppendLine(v.Mostrar());
+                        if (v is Dulce)
+                            sb.AppendLine(v.Mostrar());
                         break;
                     case ETipo.Leche:
-                        sb.AppendLine(v.Mostrar());
+                        if (v is Leche)
+                            sb.AppendLine(v.Mostrar());
                         break;
                     default:
                         sb.AppendLine(v.Mostrar());
@@ -84,7 +94,7 @@ namespace Entidades_2018
         /// </summary>
         /// <param name="c">Objeto donde se agregará el elemento</param>
         /// <param name="p">Objeto a agregar</param>
-        /// <returns></returns>
+        /// <returns>Objeto Changuito con un producto agregado</returns>
         public static Changuito operator +(Changuito c, Producto p)
         {
             foreach (Producto v in c.productos)
@@ -103,7 +113,7 @@ namespace Entidades_2018
         /// </summary>
         /// <param name="c">Objeto donde se quitará el elemento</param>
         /// <param name="p">Objeto a quitar</param>
-        /// <returns></returns>
+        /// <returns>Objeto Changuito con un elemento menos</returns>
         public static Changuito operator -(Changuito c, Producto p)
         {
             foreach (Producto v in c.productos)

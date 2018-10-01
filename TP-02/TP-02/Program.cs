@@ -43,6 +43,7 @@ namespace TP_02_2018
             Console.WriteLine(changoDeCompras.ToString());
             Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
             Console.ReadKey();
+            Console.Beep();
             Console.Clear();
 
             // Quito un item y muestro
@@ -51,24 +52,29 @@ namespace TP_02_2018
             Console.WriteLine(changoDeCompras.ToString());
             Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
             Console.ReadKey();
+            Console.Beep();
+            Console.Clear();
+            
+            // Muestro solo Leches
+            Console.WriteLine(Changuito.Mostrar(changoDeCompras, Changuito.ETipo.Leche));
+            Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
+            Console.ReadKey();
+            Console.Beep();
             Console.Clear();
 
             // Muestro solo Dulces
             Console.WriteLine(Changuito.Mostrar(changoDeCompras, Changuito.ETipo.Dulce));
             Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
             Console.ReadKey();
-            Console.Clear();
-
-            // Muestro solo Leches
-            Console.WriteLine(Changuito.Mostrar(changoDeCompras, Changuito.ETipo.Leche));
-            Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
-            Console.ReadKey();
+            Console.Beep();
             Console.Clear();
 
             // Muestro solo Snacks
             Console.WriteLine(Changuito.Mostrar(changoDeCompras, Changuito.ETipo.Snacks));
             Console.WriteLine("<-------------PRESIONE UNA TECLA PARA SALIR------------->");
             Console.ReadKey();
+            Console.Beep();
+
         }
     }
 }

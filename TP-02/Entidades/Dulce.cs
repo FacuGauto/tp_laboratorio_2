@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,12 @@ namespace Entidades_2018
 {
     public class Dulce : Producto
     {
+        /// <summary>
+        /// Constructor de la clase Dulce
+        /// </summary>
+        /// <param name="marca">Marca del dulce</param>
+        /// <param name="patente">Codigo de barras del producto</param>
+        /// <param name="color">Color</param>
         public Dulce(EMarca marca, string patente, ConsoleColor color) :base(patente,marca,color)
         {
         }
@@ -23,6 +29,10 @@ namespace Entidades_2018
             }
         }
 
+        /// <summary>
+        /// Muestra los datos del dulce
+        /// </summary>
+        /// <returns>string con los datos del dulce</returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();

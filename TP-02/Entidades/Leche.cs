@@ -13,18 +13,25 @@ namespace Entidades_2018
         public enum ETipo { Entera, Descremada }
         private ETipo tipo;
 
+
         /// <summary>
-        /// Por defecto, TIPO será ENTERA
+        /// Constructor de la clase Leche
         /// </summary>
-        /// <param name="marca"></param>
-        /// <param name="patente"></param>
-        /// <param name="color"></param>
+        /// <param name="marca">Marca de la leche</param>
+        /// <param name="patente">Codigo de barras de la leche</param>
+        /// <param name="color">Color</param>
+        /// <param name="tipo">Tipo de leche(Entera,Descremada)</param>
         public Leche(EMarca marca, string patente, ConsoleColor color,ETipo tipo)
             : base(patente, marca, color)
         {
             this.tipo = tipo;
         }
-
+        /// <summary>
+        /// Constructor de la clase Leche sin tipo. Por defecto, TIPO será ENTERA
+        /// </summary>
+        /// <param name="marca">Marca de la leche</param>
+        /// <param name="patente">Codigo de barras de la leche</param>
+        /// <param name="color">Color</param>
         public Leche(EMarca marca, string patente, ConsoleColor color)
             : base(patente, marca, color)
         {
@@ -42,6 +49,10 @@ namespace Entidades_2018
             }
         }
 
+        /// <summary>
+        /// Muestra los datos de objeto Leche
+        /// </summary>
+        /// <returns>string con los datos del objeto leche</returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
