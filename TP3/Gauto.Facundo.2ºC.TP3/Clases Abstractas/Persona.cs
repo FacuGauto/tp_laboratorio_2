@@ -48,6 +48,15 @@ namespace Clases_Abstractas
             }
             set
             {
+                if (this.Nacionalidad == ENacionalidad.Argentino)
+                { if (value > 1 && value < 89999999)
+                    { this.dni = value; }
+                }
+                if (this.Nacionalidad == ENacionalidad.Argentino)
+                {
+                    if (value > 1 && value < 89999999)
+                    { this.dni = value; }
+                }
                 dni = value;
             }
         }
