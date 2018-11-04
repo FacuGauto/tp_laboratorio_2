@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Excepciones")]
+[assembly: AssemblyTitle("Gauto.Facundo.2°C.TP3")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Excepciones")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2018")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Gauto.Facundo.2°C.TP3")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("4dd0492f-d7a1-4051-9493-155d77a0cd47")]
+[assembly: Guid("927ca71a-d74c-401b-ab57-426542d5cfeb")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //

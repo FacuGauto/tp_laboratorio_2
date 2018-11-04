@@ -27,7 +27,7 @@ namespace Clases_Abstractas
         }
         public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
-            this.StringToDNI;
+            //this.StringToDNI;
         }
         public string Apellido
         {
@@ -49,7 +49,8 @@ namespace Clases_Abstractas
             set
             {
                 if (this.Nacionalidad == ENacionalidad.Argentino)
-                { if (value > 1 && value < 89999999)
+                {
+                    if (value > 1 && value < 89999999)
                     { this.dni = value; }
                 }
                 if (this.Nacionalidad == ENacionalidad.Argentino)
@@ -87,7 +88,7 @@ namespace Clases_Abstractas
         {
             set
             {
-                dni = value;
+                //dni = value;
             }
         }
 
@@ -108,7 +109,5 @@ namespace Clases_Abstractas
             return "d";
         }
         public enum ENacionalidad { Argentino, Extranjero };
-
-   
     }
 }

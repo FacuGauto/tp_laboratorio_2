@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>4dd0492f-d7a1-4051-9493-155d77a0cd47</ProjectGuid>
+    <ProjectGuid>ada77ce2-603c-42aa-85c5-7d9d1c6daba4</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Excepciones</RootNamespace>
-    <AssemblyName>Excepciones</AssemblyName>
+    <RootNamespace>Archivos</RootNamespace>
+    <AssemblyName>Archivos</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

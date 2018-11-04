@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clases_Abstractas
+namespace Clases_Instanciables
 {
-    class Universidad
+    public class Universidad
     {
         private List<Alumno> alumnos;
         private List<Jornada> jornada;
@@ -68,6 +68,6 @@ namespace Clases_Abstractas
             return base.ToString();
         }
 
-        enum EClases { Programacion, Laboratorio, Legislacion, SPD};
+        public enum EClases { Programacion, Laboratorio, Legislacion, SPD}
     }
 }

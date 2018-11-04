@@ -13,8 +13,7 @@ namespace Clases_Abstractas
         public Universitario()
         {
         }
-
-        public Universitario(int legajo,string nombre,string apellido,string dni,ENacionalidad nacionalidad) :base(nombre,apellido,dni,nacionalidad)
+        public Universitario(int legajo, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(nombre, apellido, dni, nacionalidad)
         {
             this.legajo = legajo;
         }
@@ -30,7 +29,7 @@ namespace Clases_Abstractas
         {
             return "";
         }
-        public static bool operator ==(Universitario pg1,Universitario pg2)
+        public static bool operator ==(Universitario pg1, Universitario pg2)
         {
             return true;
         }

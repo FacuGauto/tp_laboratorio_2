@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Clases_Abstractas;
+using static Clases_Instanciables.Universidad;
 
-namespace Clases_Abstractas
+namespace Clases_Instanciables
 {
     public sealed class Alumno : Universitario
     {
@@ -15,10 +17,12 @@ namespace Clases_Abstractas
         { }
         public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, EClases claseQueToma) : base(id, nombre, apellido, dni, nacionalidad)
         {
-
+            this.claseQueToma = claseQueToma;
         }
-        public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, EClases claseQueToma, EEstadoCuenta estadoCuenta)
-        { }
+        public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, EClases claseQueToma, EEstadoCuenta estadoCuenta) :this(id,nombre,apellido,dni,nacionalidad,claseQueToma)
+        {
+            this.estadoCuenta = estadoCuenta;
+        }
         protected new string MostrarDatos()
         {
             return "";
@@ -40,7 +44,6 @@ namespace Clases_Abstractas
             return base.ToString();
         }
 
-        enum EEstadoCuenta { AlDia,Deudor,Becado };
-
+        public enum EEstadoCuenta { AlDia, Deudor, Becado };
     }
 }
