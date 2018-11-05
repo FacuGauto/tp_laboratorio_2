@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Excepciones;
+using Archivos;
 
 namespace Clases_Instanciables
 {
@@ -43,11 +45,14 @@ namespace Clases_Instanciables
             set { this.jornadas[i] = value; }
         }
 
-        public bool Guardar(Universidad uni)
-        { return true; }
-        private string MostrarDatos(Universidad uni)
+        private static string MostrarDatos(Universidad uni)
         {
-            return "";
+            StringBuilder cadena = new StringBuilder();
+            foreach (Jornada jornada in uni.jornadas)
+            {
+                cadena.AppendLine(jornada.ToString());
+            }
+            return cadena.ToString();
         }
 
         public static bool operator ==(Universidad g, Alumno a)
@@ -76,26 +81,86 @@ namespace Clases_Instanciables
         public static bool operator !=(Universidad g, Profesor i)
         { return !(g == i); }
 
-        /*public static Profesor operator ==(Universidad u, EClases clase)
-        { return true; }
+        public static Profesor operator ==(Universidad u, EClases clase)
+        {
+            foreach (Profesor profesor in u.Instructores)
+            {
+                if (profesor == clase)
+                    return profesor;
+            }
+            throw new SinProfesorException("No hay profesor para esta clase");
+        }
         public static Profesor operator !=(Universidad u, EClases clase)
-        { return true; }*/
+        {
+            foreach (Profesor profesor in u.Instructores)
+            {
+                if (profesor != clase)
+                    return profesor;
+            }
+            throw new SinProfesorException("Todos los profesores de la lista pueden dar la clase");
+        }
 
         public static Universidad operator +(Universidad g, EClases clase)
         {
-            Jornada jornada;
-            Profesor profesor;
+            Profesor profesor = g == clase;
+            Jornada jornada = new Jornada(clase,profesor);
 
+            foreach (Alumno alumno in g.Alumnos)
+            {
+                if (alumno == clase)
+                    jornada += alumno;
+            }
+            g.Jornadas.Add(jornada);
             return g;
         }
 
         public static Universidad operator +(Universidad u, Alumno a)
-        { return u; }
+        {
+            if (u != a)
+                u.Alumnos.Add(a);
+            return u;
+        }
         public static Universidad operator +(Universidad u, Profesor i)
-        { return u; }
+        {
+            if (u != i)
+                u.Instructores.Add(i);
+            return u;
+        }
         public override string ToString()
         {
-            return base.ToString();
+            return Universidad.MostrarDatos(this);
+        }
+
+        public static bool Guardar(Universidad uni)
+        {
+            string path = "Universidad.xml";
+            try
+            {
+                Xml<Universidad> xml = new Xml<Universidad>();
+                xml.Guardar(path,uni);
+            }
+            catch (Exception)
+            {
+                throw new ArchivosException("Fallo al guardar el xml");
+            }
+            return true;
+        }
+
+        public static Universidad Leer()
+        {
+            string path = "Universidad.xml";
+            Universidad universidad;
+
+            try
+            {
+                Xml<Universidad> xml = new Xml<Universidad>();
+                xml.Leer(path, out universidad);
+            }
+            catch (Exception)
+            {
+                throw new ArchivosException("Fallo en la operacion de lectura del xml");
+            }
+            return universidad;
         }
 
         public enum EClases { Programacion, Laboratorio, Legislacion, SPD}

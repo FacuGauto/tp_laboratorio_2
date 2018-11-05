@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using Archivos;
+using Archivos;
 using static Clases_Instanciables.Universidad;
 
 namespace Clases_Instanciables
@@ -82,14 +82,20 @@ namespace Clases_Instanciables
             return cadena.ToString();
         }
 
-        public bool Guardar(Jornada jornada)
+        public static bool Guardar(Jornada jornada)
         {
-            Texto texto = new Texto();
-
-            return true;
+            Texto txt = new Texto();
+            string path = "texto.txt";
+            return txt.Guardar(path,jornada.ToString());
         }
 
-        public string Leer()
-        { return ""; }
+        public static string Leer()
+        {
+            Texto txt = new Texto();
+            string path = "text.txt";
+            string cadena = "";
+            txt.Leer(path,out cadena);
+            return cadena;
+        }
     }
 }
