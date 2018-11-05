@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Excepciones;
 
 namespace Clases_Abstractas
 {
@@ -27,49 +28,39 @@ namespace Clases_Abstractas
         }
         public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
-            //this.StringToDNI;
+            this.StringToDNI = dni;
         }
         public string Apellido
         {
             get
             {
-                return apellido;
+                return this.apellido;
             }
             set
             {
-                apellido = value;
+                this.apellido = this.ValidarNombreApellido(value);
             }
         }
         public int DNI
         {
             get
             {
-                return dni;
+                return this.dni;
             }
             set
             {
-                if (this.Nacionalidad == ENacionalidad.Argentino)
-                {
-                    if (value > 1 && value < 89999999)
-                    { this.dni = value; }
-                }
-                if (this.Nacionalidad == ENacionalidad.Argentino)
-                {
-                    if (value > 1 && value < 89999999)
-                    { this.dni = value; }
-                }
-                dni = value;
+                this.dni = this.ValidarDni(this.Nacionalidad, value);
             }
         }
         public ENacionalidad Nacionalidad
         {
             get
             {
-                return nacionalidad;
+                return this.nacionalidad;
             }
             set
             {
-                nacionalidad = value;
+                this.nacionalidad = value;
             }
         }
 
@@ -77,37 +68,72 @@ namespace Clases_Abstractas
         {
             get
             {
-                return nombre;
+                return this.nombre;
             }
             set
             {
-                nombre = value;
+                this.nombre = this.ValidarNombreApellido(value);
             }
         }
         public string StringToDNI
         {
             set
             {
-                //dni = value;
+                this.DNI = this.ValidarDni(this.Nacionalidad, value);
             }
         }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
         private int ValidarDni(ENacionalidad nacionalidad, int dato)
         {
-            return 1;
+            if (nacionalidad == ENacionalidad.Argentino)
+            {
+                if (dato > 1 && dato < 89999999)
+                    return dato;
+            }
+            if (nacionalidad == ENacionalidad.Argentino)
+            {
+                if (dato > 1 && dato < 89999999)
+                    return dato;
+            }
+            throw new NacionalidadInvalidaException("Nacionalidad Incorrecta");
         }
         private int ValidarDni(ENacionalidad nacionalidad, string dato)
         {
-            return 1;
+            int auxDni;
+            if (dato.Length < 1 || dato.Length > 8)
+                throw new DniInvalidoException("DNI Incorrecto");
+
+            foreach (char c in dato)
+                if (!(char.IsDigit(c)))
+                    throw new DniInvalidoException("Dni Incorrecto, no todos los caracteres son numericos");
+
+            if (int.TryParse(dato, out auxDni))
+            {
+                return this.ValidarDni(this.Nacionalidad, auxDni);
+            }
+            else
+            {
+                throw new DniInvalidoException("DNI Incorrecto");
+            }
         }
         private string ValidarNombreApellido(string dato)
         {
-            return "d";
+            foreach (char c in dato)
+            {
+                if (char.IsLetter(c))
+                    return "";
+            }
+            return dato;
         }
+
+
+        public override string ToString()
+        {
+            StringBuilder cadena = new StringBuilder();
+            cadena.AppendFormat("Apellido: {0}, Nombre {1}, DNI: {2}, Nacionalidad: {3}.",this.Apellido,this.Nombre,this.DNI,this,Nacionalidad);
+            return cadena.ToString();
+        }
+
         public enum ENacionalidad { Argentino, Extranjero };
     }
 }

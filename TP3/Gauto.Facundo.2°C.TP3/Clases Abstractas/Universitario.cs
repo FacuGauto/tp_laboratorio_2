@@ -19,19 +19,25 @@ namespace Clases_Abstractas
         }
         public override bool Equals(object obj)
         {
-            return base.Equals(obj);
+            if (this.GetType() == obj.GetType())
+            {
+                if (((Universitario)obj).legajo == this.legajo || ((Universitario)obj).legajo == this.DNI)
+                    return true;
+            }
+            return false;
         }
-        protected string MostrarDatos()
+        protected virtual string MostrarDatos()
         {
-            return "a";
+            StringBuilder cadena = new StringBuilder();
+            cadena.AppendFormat("{0} Legajo: {1}", base.ToString(),this.legajo);
+            return cadena.ToString();
         }
-        protected string ParticiparEnClase()
-        {
-            return "";
-        }
+
+        protected abstract string ParticiparEnClase();
+        
         public static bool operator ==(Universitario pg1, Universitario pg2)
         {
-            return true;
+            return pg1.Equals(pg2);
         }
         public static bool operator !=(Universitario pg1, Universitario pg2)
         {

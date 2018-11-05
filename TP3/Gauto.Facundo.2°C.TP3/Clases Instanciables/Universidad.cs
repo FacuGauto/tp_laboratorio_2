@@ -9,7 +9,7 @@ namespace Clases_Instanciables
     public class Universidad
     {
         private List<Alumno> alumnos;
-        private List<Jornada> jornada;
+        private List<Jornada> jornadas;
         private List<Profesor> profesores;
 
         public Universidad()
@@ -18,26 +18,31 @@ namespace Clases_Instanciables
         public List<Alumno> Alumnos
         {
             get
-            {
-                return this.alumnos;
-            }
+            {return this.alumnos; }
             set
-            { }
+            { this.alumnos = value; }
         }
         public List<Profesor> Instructores
         {
             get
             { return this.profesores; }
             set
-            { }
+            { this.profesores = value; }
         }
         public List<Jornada> Jornadas
         {
             get
-            { return this.jornada; }
+            { return this.jornadas; }
             set
-            { }
+            { this.jornadas = value; }
         }
+
+        public Jornada this[int i]
+        {
+            get { return this.jornadas[i]; }
+            set { this.jornadas[i] = value; }
+        }
+
         public bool Guardar(Universidad uni)
         { return true; }
         private string MostrarDatos(Universidad uni)
@@ -46,19 +51,44 @@ namespace Clases_Instanciables
         }
 
         public static bool operator ==(Universidad g, Alumno a)
-        { return true; }
+        {
+            foreach (Alumno alumno in g.alumnos)
+            {
+                if (alumno == a)
+                    return true;
+            }
+            return false;
+        }
+
         public static bool operator !=(Universidad g, Alumno a)
-        { return true; }
+        { return !(g == a); }
+
         public static bool operator ==(Universidad g, Profesor i)
-        { return true; }
+        {
+            foreach (Profesor profesor in g.profesores)
+            {
+                if (profesor == i)
+                    return true;
+            }
+            return false;
+        }
+
         public static bool operator !=(Universidad g, Profesor i)
-        { return true; }
+        { return !(g == i); }
+
         /*public static Profesor operator ==(Universidad u, EClases clase)
         { return true; }
         public static Profesor operator !=(Universidad u, EClases clase)
         { return true; }*/
+
         public static Universidad operator +(Universidad g, EClases clase)
-        { return g; }
+        {
+            Jornada jornada;
+            Profesor profesor;
+
+            return g;
+        }
+
         public static Universidad operator +(Universidad u, Alumno a)
         { return u; }
         public static Universidad operator +(Universidad u, Profesor i)

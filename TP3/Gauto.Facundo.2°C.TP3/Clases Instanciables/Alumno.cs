@@ -23,25 +23,30 @@ namespace Clases_Instanciables
         {
             this.estadoCuenta = estadoCuenta;
         }
-        protected new string MostrarDatos()
+        protected override string MostrarDatos()
         {
-            return "";
+            StringBuilder cadena = new StringBuilder();
+            cadena.AppendFormat("{0}\n{1}.\nEstado de cuenta: {2}",base.MostrarDatos(), this.ParticiparEnClase(),this.estadoCuenta);
+            return cadena.ToString();
         }
         public static bool operator ==(Alumno a, EClases clase)
         {
-            return true;
+            if(a.claseQueToma == clase && a.estadoCuenta != Alumno.EEstadoCuenta.Deudor)
+                return true;
+
+            return false;
         }
         public static bool operator !=(Alumno a, EClases clase)
         {
-            return !(a == clase);
+            return !(a.claseQueToma == clase);
         }
-        protected string ParticiparEnclase()
+        protected override string ParticiparEnClase()
         {
-            return "";
+            return String.Format("TOMA CLASE DE {0}" + this.claseQueToma);
         }
         public override string ToString()
         {
-            return base.ToString();
+            return this.MostrarDatos();
         }
 
         public enum EEstadoCuenta { AlDia, Deudor, Becado };

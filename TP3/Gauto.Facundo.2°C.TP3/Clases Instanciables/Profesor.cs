@@ -20,28 +20,51 @@ namespace Clases_Instanciables
             random = new Random();
         }
         public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad)
-        { }
+        {
+            this.clasesDelDia = new Queue<Universidad.EClases>();
+            this._randomClases();
+        }
         private void _randomClases()
-        { }
-        protected new string MostrarDatos()
-        { return ""; }
+        {
+            this.clasesDelDia.Enqueue((Universidad.EClases)random.Next(4));
+            System.Threading.Thread.Sleep(500);
+            this.clasesDelDia.Enqueue((Universidad.EClases)random.Next(4));
+        }
 
-        protected string ParticiparEnClase()
-        { return ""; }
+        protected override string MostrarDatos()
+        {
+            StringBuilder cadena = new StringBuilder();
+            cadena.AppendFormat("{0}\n{1}", base.MostrarDatos(), this.ParticiparEnClase());
+            return cadena.ToString();
+        }
+
+        protected override string ParticiparEnClase()
+        {
+            StringBuilder cadena = new StringBuilder();
+            cadena.AppendLine("CLASES DEL DIA: ");
+            foreach (Universidad.EClases c in this.clasesDelDia)
+            {
+                cadena.AppendLine(c.ToString());
+            }
+            return cadena.ToString();
+        }
 
         public override string ToString()
         {
-            return base.ToString();
+            return this.MostrarDatos();
         }
 
         public static bool operator ==(Profesor i, EClases clase)
         {
-            return true;
+            if (i.clasesDelDia.Contains(clase))
+                return true;
+
+            return false;
         }
 
         public static bool operator !=(Profesor i, EClases clase)
         {
-            return true;
+            return !(i == clase);
         }
     }
 }
