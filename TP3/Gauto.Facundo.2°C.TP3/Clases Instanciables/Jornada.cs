@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Archivos;
 using static Clases_Instanciables.Universidad;
+using Excepciones;
 
 namespace Clases_Instanciables
 {
@@ -18,8 +19,11 @@ namespace Clases_Instanciables
         {
             this.alumnos = new List<Alumno>();
         }
-        public Jornada(EClases clase, Profesor instructor)
-        { }
+        public Jornada(EClases clase, Profesor instructor) : this()
+        {
+            this.Instructor = instructor;
+            this.Clase = clase;
+        }
 
         public List<Alumno> Alumnos
         {
@@ -62,10 +66,14 @@ namespace Clases_Instanciables
 
         public static Jornada operator +(Jornada j, Alumno a)
         {
-
-            if (j != a)
-                j.alumnos.Add(a);
-
+            if (j == a)
+            {
+                throw new AlumnoRepetidoException("Alumno repetido");
+            }
+            else
+            {
+                j.Alumnos.Add(a);
+            }
             return j;
         }
 

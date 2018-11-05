@@ -90,9 +90,9 @@ namespace Clases_Abstractas
                 if (dato > 1 && dato < 89999999)
                     return dato;
             }
-            if (nacionalidad == ENacionalidad.Argentino)
+            if (nacionalidad == ENacionalidad.Extranjero)
             {
-                if (dato > 1 && dato < 89999999)
+                if (dato > 90000000 && dato < 99999999)
                     return dato;
             }
             throw new NacionalidadInvalidaException("Nacionalidad Incorrecta");
@@ -130,7 +130,7 @@ namespace Clases_Abstractas
         public override string ToString()
         {
             StringBuilder cadena = new StringBuilder();
-            cadena.AppendFormat("Apellido: {0}, Nombre {1}, DNI: {2}, Nacionalidad: {3}.",this.Apellido,this.Nombre,this.DNI,this,Nacionalidad);
+            cadena.AppendFormat("Apellido: {0}, Nombre {1}, DNI: {2}, Nacionalidad: {3}.",this.Apellido,this.Nombre,this.DNI,this.Nacionalidad);
             return cadena.ToString();
         }
 

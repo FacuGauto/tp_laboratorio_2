@@ -51,7 +51,9 @@ namespace Consola
             Profesor i1 = new Profesor(1, "Juan", "Lopez", "12234456", Persona.ENacionalidad.Argentino);
             gim += i1;
             Profesor i2 = new Profesor(2, "Roberto", "Juarez", "32234456", Persona.ENacionalidad.Argentino);
-            gim += i2;            try
+            gim += i2;
+
+            try
             {
                 gim += Universidad.EClases.Programacion;
             }

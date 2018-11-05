@@ -15,7 +15,11 @@ namespace Clases_Instanciables
         private List<Profesor> profesores;
 
         public Universidad()
-        { }
+        {
+            this.Alumnos = new List<Alumno>();
+            this.Instructores = new List<Profesor>();
+            this.Jornadas = new List<Jornada>();
+        }
 
         public List<Alumno> Alumnos
         {
@@ -53,6 +57,11 @@ namespace Clases_Instanciables
                 cadena.AppendLine(jornada.ToString());
             }
             return cadena.ToString();
+        }
+
+        public override string ToString()
+        {
+            return Universidad.MostrarDatos(this);
         }
 
         public static bool operator ==(Universidad g, Alumno a)
@@ -108,7 +117,7 @@ namespace Clases_Instanciables
             foreach (Alumno alumno in g.Alumnos)
             {
                 if (alumno == clase)
-                    jornada += alumno;
+                    jornada = jornada + alumno;
             }
             g.Jornadas.Add(jornada);
             return g;
@@ -116,7 +125,9 @@ namespace Clases_Instanciables
 
         public static Universidad operator +(Universidad u, Alumno a)
         {
-            if (u != a)
+            if (u == a)
+                throw new AlumnoRepetidoException("ERROR. Alumno repetido");
+            else
                 u.Alumnos.Add(a);
             return u;
         }
@@ -125,10 +136,6 @@ namespace Clases_Instanciables
             if (u != i)
                 u.Instructores.Add(i);
             return u;
-        }
-        public override string ToString()
-        {
-            return Universidad.MostrarDatos(this);
         }
 
         public static bool Guardar(Universidad uni)

@@ -42,7 +42,7 @@ namespace Clases_Instanciables
         }
         protected override string ParticiparEnClase()
         {
-            return String.Format("TOMA CLASE DE {0}" + this.claseQueToma);
+            return "TOMA CLASE DE " + this.claseQueToma;
         }
         public override string ToString()
         {
