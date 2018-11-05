@@ -18,9 +18,9 @@ namespace Archivos
             {
                 sw.Write(datos);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArchivosException("Error en operacion guardar");
+                throw new ArchivosException("Error en operacion guardar", e);
             }
             finally
             {
@@ -37,9 +37,9 @@ namespace Archivos
             {
                 datos = sr.ReadToEnd();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArchivosException("Error en operacion Leer");
+                throw new ArchivosException("Error en operacion Leer", e);
             }
             finally
             {

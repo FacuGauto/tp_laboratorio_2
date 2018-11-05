@@ -20,9 +20,9 @@ namespace Archivos
             {
                 ser.Serialize(xmlWr, datos);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArchivosException("Error en operacion Guardar xml");
+                throw new ArchivosException("Error en operacion Guardar xml", e);
             }
             finally
             {
@@ -40,9 +40,9 @@ namespace Archivos
             {
                 datos = (T)ser.Deserialize(xmlRd);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArchivosException("Error en operacion Leer xml");
+                throw new ArchivosException("Error en operacion Leer xml", e);
             }
             finally
             {

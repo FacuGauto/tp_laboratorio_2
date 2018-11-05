@@ -139,9 +139,9 @@ namespace Clases_Instanciables
                 Xml<Universidad> xml = new Xml<Universidad>();
                 xml.Guardar(path,uni);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArchivosException("Fallo al guardar el xml");
+                throw new ArchivosException("Fallo al guardar el xml",e);
             }
             return true;
         }
@@ -156,9 +156,9 @@ namespace Clases_Instanciables
                 Xml<Universidad> xml = new Xml<Universidad>();
                 xml.Leer(path, out universidad);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArchivosException("Fallo en la operacion de lectura del xml");
+                throw new ArchivosException("Fallo en la operacion de lectura del xml", e);
             }
             return universidad;
         }
