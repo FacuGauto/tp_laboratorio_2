@@ -66,9 +66,9 @@ namespace Clases_Instanciables
 
         public static bool operator ==(Universidad g, Alumno a)
         {
-            foreach (Alumno alumno in g.alumnos)
+            foreach (Alumno aux in g.alumnos)
             {
-                if (alumno == a)
+                if (aux == a)
                     return true;
             }
             return false;

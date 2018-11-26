@@ -16,7 +16,7 @@ namespace Clases_Abstractas
 
         public Persona()
         { }
-        public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
+        public Persona(string nombre, string apellido, ENacionalidad nacionalidad) :this()
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -85,7 +85,7 @@ namespace Clases_Abstractas
 
         private int ValidarDni(ENacionalidad nacionalidad, int dato)
         {
-            if (nacionalidad == ENacionalidad.Argentino)
+            /*if (nacionalidad == ENacionalidad.Argentino)
             {
                 if (dato > 1 && dato < 89999999)
                     return dato;
@@ -95,10 +95,23 @@ namespace Clases_Abstractas
                 if (dato > 90000000 && dato < 99999999)
                     return dato;
             }
-            throw new NacionalidadInvalidaException("Nacionalidad Incorrecta");
+            throw new NacionalidadInvalidaException("La nacionalidad no coincide con el numero de DNI");*/
+            switch (nacionalidad)
+            {
+                case ENacionalidad.Argentino:
+                    if (dato >= 1 && dato <= 89999999)
+                        return dato;
+                    break;
+                case ENacionalidad.Extranjero:
+                    if (dato >= 90000000 && dato <= 99999999)
+                        return dato;
+                    break;
+            }
+            throw new NacionalidadInvalidaException("ERROR, Nacionalidad INVALIDA");
         }
         private int ValidarDni(ENacionalidad nacionalidad, string dato)
         {
+            /*
             int auxDni;
             if (dato.Length < 1 || dato.Length > 8)
                 throw new DniInvalidoException("DNI Incorrecto");
@@ -114,13 +127,25 @@ namespace Clases_Abstractas
             else
             {
                 throw new DniInvalidoException("DNI Incorrecto");
+            }*/
+            int auxdni;
+            if (dato.Length <= 8 && dato.Length > 0 && (int.TryParse(dato, out auxdni)))
+            {
+                foreach (char c in dato)
+                {
+                    if (!char.IsDigit(c))
+                        throw new DniInvalidoException("ERROR, DNI contiene caracteres NO numericos");
+                }
+                return ValidarDni(nacionalidad, auxdni);
             }
+            else
+                throw new DniInvalidoException("ERROR, Cantidad de caracteres erronea || Imposibilidad de pasar a valor Numerico");
         }
         private string ValidarNombreApellido(string dato)
         {
             foreach (char c in dato)
             {
-                if (char.IsLetter(c))
+                if (!char.IsLetter(c))
                     return "";
             }
             return dato;
@@ -130,7 +155,10 @@ namespace Clases_Abstractas
         public override string ToString()
         {
             StringBuilder cadena = new StringBuilder();
-            cadena.AppendFormat("Apellido: {0}, Nombre {1}, DNI: {2}, Nacionalidad: {3}.",this.Apellido,this.Nombre,this.DNI,this.Nacionalidad);
+            cadena.AppendFormat("Apellido: {0}, Nombre {1}.\n",this.Apellido,this.Nombre);
+            cadena.AppendFormat("Nacionalidad: {0}.\n",this.Nacionalidad);
+            cadena.AppendFormat("DNI: {0}.\n",this.DNI);
+
             return cadena.ToString();
         }
 

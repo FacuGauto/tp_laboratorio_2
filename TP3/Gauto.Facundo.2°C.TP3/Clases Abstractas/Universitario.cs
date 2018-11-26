@@ -19,17 +19,17 @@ namespace Clases_Abstractas
         }
         public override bool Equals(object obj)
         {
-            if (this.GetType() == obj.GetType())
+            if (this.GetType() == obj.GetType() && (((Universitario)obj).legajo == this.legajo || (this.DNI == ((Universitario)obj).DNI)))
             {
-                if (((Universitario)obj).legajo == this.legajo || ((Universitario)obj).legajo == this.DNI)
-                    return true;
+                return true;
             }
             return false;
         }
         protected virtual string MostrarDatos()
         {
             StringBuilder cadena = new StringBuilder();
-            cadena.AppendFormat("{0} Legajo: {1}", base.ToString(),this.legajo);
+            cadena.AppendLine(base.ToString());
+            cadena.AppendFormat("Legajo: {0}\n",this.legajo);
             return cadena.ToString();
         }
 

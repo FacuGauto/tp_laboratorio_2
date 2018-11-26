@@ -15,9 +15,10 @@ namespace Clases_Instanciables
         private EClases clase;
         private Profesor instructor;
 
-        private Jornada()
+        //private Jornada()
+        public Jornada()
         {
-            this.alumnos = new List<Alumno>();
+            this.Alumnos = new List<Alumno>();
         }
         public Jornada(EClases clase, Profesor instructor) : this()
         {
@@ -80,13 +81,15 @@ namespace Clases_Instanciables
         public override string ToString()
         {
             StringBuilder cadena = new StringBuilder();
-            cadena.AppendFormat("Clase: {0}, Profesor: {1}",this.Clase,this.Instructor);
+            cadena.AppendFormat("->Clase: {0}\n",this.Clase);
+            cadena.AppendFormat("->Profesor: {0}\n",this.Instructor.ToString());
 
             foreach (Alumno alumno in this.Alumnos)
             {
+                cadena.AppendLine("->ALUMNO:");
                 cadena.AppendLine(alumno.ToString());
             }
-
+            cadena.AppendLine("------------------------------------------------------>");
             return cadena.ToString();
         }
 
@@ -100,7 +103,7 @@ namespace Clases_Instanciables
         public static string Leer()
         {
             Texto txt = new Texto();
-            string path = "text.txt";
+            string path = "texto.txt";
             string cadena = "";
             txt.Leer(path,out cadena);
             return cadena;

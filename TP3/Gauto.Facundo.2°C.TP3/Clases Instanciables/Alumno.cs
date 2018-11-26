@@ -26,7 +26,9 @@ namespace Clases_Instanciables
         protected override string MostrarDatos()
         {
             StringBuilder cadena = new StringBuilder();
-            cadena.AppendFormat("{0}\n{1}.\nEstado de cuenta: {2}",base.MostrarDatos(), this.ParticiparEnClase(),this.estadoCuenta);
+            cadena.AppendLine(base.MostrarDatos());
+            cadena.AppendFormat("\n{0}",this.ParticiparEnClase());
+            cadena.AppendFormat("\nEstado de cuenta: {0}",this.estadoCuenta);
             return cadena.ToString();
         }
         public static bool operator ==(Alumno a, EClases clase)
@@ -38,7 +40,8 @@ namespace Clases_Instanciables
         }
         public static bool operator !=(Alumno a, EClases clase)
         {
-            return !(a.claseQueToma == clase);
+            //return !(a.claseQueToma == clase);
+            return !(a == clase);
         }
         protected override string ParticiparEnClase()
         {
@@ -49,6 +52,6 @@ namespace Clases_Instanciables
             return this.MostrarDatos();
         }
 
-        public enum EEstadoCuenta { AlDia, Deudor, Becado };
+        public enum EEstadoCuenta { AlDia, Deudor, Becado }
     }
 }

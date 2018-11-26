@@ -56,6 +56,7 @@ namespace Consola
             try
             {
                 gim += Universidad.EClases.Programacion;
+                Console.WriteLine("EEEEEEEEEEEEEEEEEEEEEEE");
             }
             catch (SinProfesorException e)
             {
@@ -64,6 +65,7 @@ namespace Consola
             try
             {
                 gim += Universidad.EClases.Laboratorio;
+                Console.WriteLine("AAAAAAAAAAAAAAAAA");
             }
             catch (SinProfesorException e)
             {
@@ -72,6 +74,7 @@ namespace Consola
             try
             {
                 gim += Universidad.EClases.Legislacion;
+                Console.WriteLine("IIIIIIIIIIIIIIIIIIII");
             }
             catch (SinProfesorException e)
             {
@@ -80,12 +83,14 @@ namespace Consola
             try
             {
                 gim += Universidad.EClases.SPD;
+                Console.WriteLine("OOOOOOOOOOOOOOOOOOOOOOOO");
             }
             catch (SinProfesorException e)
             {
                 Console.WriteLine(e.Message);
             }
             Console.WriteLine(gim.ToString());
+            Console.WriteLine("DKADHKAHDKJHAKJDHAKJDHAHDKJHAKDKHADKHAKDHKH");
             Console.ReadKey();
             Console.Clear();
             try
