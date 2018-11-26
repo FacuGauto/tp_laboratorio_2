@@ -20,6 +20,9 @@ namespace MainCorreo
             this.correo = new Correo();
         }
 
+        /// <summary>
+        /// Recorre la lista de paquetes agregando cada uno en el listbox correspondiente.
+        /// </summary>
         private void ActualizarEstados()
         {
             this.lstEstadoEntregado.Items.Clear();
@@ -65,9 +68,17 @@ namespace MainCorreo
             }
         }
 
+        /// <summary>
+        /// Agregara el paquete al correo y actualizara los estados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Paquete paquete = new Paquete(this.mtxtTrackingID.Text,this.txtDireccion.Text);
+            string trackingID = this.mtxtTrackingID.Text;
+            string direccion = this.txtDireccion.Text;
+
+            Paquete paquete = new Paquete(trackingID,direccion);
 
             paquete.InformarEsatdo += this.paq_InformaEstado;
 
@@ -75,14 +86,16 @@ namespace MainCorreo
             {
                 this.correo += paquete;
             }
-            catch (Exception)
+            catch (TrackingIdRepetidoException ex)
             {
-                throw;
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
             this.ActualizarEstados();
-            this.mtxtTrackingID.Clear();
-            this.txtDireccion.Clear();
         }
 
         private void FrmPpal_FormClosing(object sender, FormClosingEventArgs e)

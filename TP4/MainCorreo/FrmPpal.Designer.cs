@@ -140,7 +140,7 @@
             // cmsListas
             // 
             this.cmsListas.Name = "contextMenuStrip1";
-            this.cmsListas.Size = new System.Drawing.Size(61, 4);
+            this.cmsListas.Size = new System.Drawing.Size(181, 26);
             // 
             // btnAgregar
             // 

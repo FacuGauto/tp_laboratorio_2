@@ -30,6 +30,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Cierra todos los hilos activos
+        /// </summary>
         public void FinEntregas()
         {
             foreach (Thread hilo in this.mockPaquetes)
@@ -39,6 +42,11 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Devuelve la informacion de los paquetes de la lista.
+        /// </summary>
+        /// <param name="elemento"></param>
+        /// <returns>String con la Informacion de los paquetes de la lista</returns>
         public string MostrarDatos(IMostrar<List<Paquete>> elemento)
         {
             string infoPaquetes = "";
@@ -49,6 +57,12 @@ namespace Entidades
             return infoPaquetes;
         }
 
+        /// <summary>
+        /// Agrega un paquete a la lista
+        /// </summary>
+        /// <param name="c">Correo</param>
+        /// <param name="p">Paquete</param>
+        /// <returns>Retorna el correo</returns>
         public static Correo operator +(Correo c, Paquete p)
         {
             foreach (Paquete paquete in c.Paquetes)
