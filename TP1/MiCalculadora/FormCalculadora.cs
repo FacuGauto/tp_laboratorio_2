@@ -11,18 +11,11 @@ using Entidades;
 
 namespace MiCalculadora
 {
-    public partial class LaCalculadora : Form
+    public partial class FormCalculadora : Form
     {
-        public LaCalculadora()
+        public FormCalculadora()
         {
             InitializeComponent();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Numero numero = new Numero();
-
-            lblResultado.Text = numero.BinarioDecimal(txtNumero1.Text);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -62,7 +55,7 @@ namespace MiCalculadora
             string operador = cmbOperador.Text;
             double resultado;
 
-            resultado = LaCalculadora.Operar(numero1,numero2,operador);
+            resultado = FormCalculadora.Operar(numero1,numero2,operador);
             lblResultado.Text = resultado.ToString();
         }
 
@@ -70,12 +63,14 @@ namespace MiCalculadora
         {
             Numero numero = new Numero();
 
-            lblResultado.Text = numero.DecimalBinario(txtNumero1.Text);
+            lblResultado.Text = numero.DecimalBinario(lblResultado.Text);
         }
 
-        private void LaCalculadora_Load(object sender, EventArgs e)
+        private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
+            Numero numero = new Numero();
 
+            lblResultado.Text = numero.BinarioDecimal(lblResultado.Text);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiCalculadora
+namespace WindowsFormsApp1
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace MiCalculadora
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormCalculadora());
+            Application.Run(new Form1());
         }
     }
 }

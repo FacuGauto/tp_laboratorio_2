@@ -14,6 +14,7 @@ namespace Entidades
         private string tranckingID;
         public delegate void DelegadoEstado(object obj, EventArgs args);
         public event DelegadoEstado InformarEsatdo;
+        public event DelegadoEstado DataBase;
         
 
 
@@ -73,9 +74,9 @@ namespace Entidades
             {
                 PaqueteDAO.Insertar(this);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+
             }
         }
 

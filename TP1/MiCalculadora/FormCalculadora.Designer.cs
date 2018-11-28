@@ -1,6 +1,6 @@
 ﻿namespace MiCalculadora
 {
-    partial class LaCalculadora
+    partial class FormCalculadora
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -51,7 +51,7 @@
             this.txtNumero2.Location = new System.Drawing.Point(520, 113);
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(150, 20);
-            this.txtNumero2.TabIndex = 1;
+            this.txtNumero2.TabIndex = 2;
             // 
             // cmbOperador
             // 
@@ -64,7 +64,7 @@
             this.cmbOperador.Location = new System.Drawing.Point(292, 112);
             this.cmbOperador.Name = "cmbOperador";
             this.cmbOperador.Size = new System.Drawing.Size(150, 21);
-            this.cmbOperador.TabIndex = 2;
+            this.cmbOperador.TabIndex = 1;
             // 
             // btnOperar
             // 
@@ -114,7 +114,7 @@
             this.btnConvertirADecimal.TabIndex = 7;
             this.btnConvertirADecimal.Text = "Convertir a Decimal";
             this.btnConvertirADecimal.UseVisualStyleBackColor = true;
-            this.btnConvertirADecimal.Click += new System.EventHandler(this.button5_Click);
+            this.btnConvertirADecimal.Click += new System.EventHandler(this.btnConvertirADecimal_Click);
             // 
             // lblResultado
             // 
@@ -145,7 +145,6 @@
             this.Name = "LaCalculadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora de Gauto Facundo del curso 2°C";
-            this.Load += new System.EventHandler(this.LaCalculadora_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -4,3 +4,9 @@ D:\UTN\Programacion 2\C#\TPS\TP1\tp_laboratorio_2\TP1\Entidades\bin\Debug\Entida
 D:\UTN\Programacion 2\C#\TPS\TP1\tp_laboratorio_2\TP1\Entidades\bin\Debug\Entidades.pdb
 D:\UTN\Programacion 2\C#\TPS\TP1\tp_laboratorio_2\TP1\Entidades\obj\Debug\Entidades.dll
 D:\UTN\Programacion 2\C#\TPS\TP1\tp_laboratorio_2\TP1\Entidades\obj\Debug\Entidades.pdb
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\Entidades\bin\Debug\Entidades.dll
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\Entidades\bin\Debug\Entidades.pdb
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\Entidades\obj\Debug\Entidades.dll
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\Entidades\obj\Debug\Entidades.pdb

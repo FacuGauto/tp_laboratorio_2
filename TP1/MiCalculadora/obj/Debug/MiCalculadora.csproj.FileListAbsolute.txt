@@ -11,3 +11,16 @@ D:\UTN\Programacion 2\C#\TPS\TP1\tp_laboratorio_2\TP1\MiCalculadora\bin\Debug\En
 D:\UTN\Programacion 2\C#\TPS\TP1\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CopyComplete
 D:\UTN\Programacion 2\C#\TPS\TP1\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.exe
 D:\UTN\Programacion 2\C#\TPS\TP1\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.pdb
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\bin\Debug\MiCalculadora.exe.config
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\bin\Debug\MiCalculadora.exe
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\bin\Debug\MiCalculadora.pdb
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\bin\Debug\Entidades.dll
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\bin\Debug\Entidades.pdb
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.csprojAssemblyReference.cache
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.Properties.Resources.resources
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.GenerateResource.cache
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CoreCompileInputs.cache
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CopyComplete
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.exe
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.pdb
+E:\UTN\Programacion 2\C#\TPS\tp_laboratorio_2\TP1\MiCalculadora\obj\Debug\MiCalculadora.FormCalculadora.resources
