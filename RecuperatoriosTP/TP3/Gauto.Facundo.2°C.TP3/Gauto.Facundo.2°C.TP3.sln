@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excepciones", "Excepciones\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola", "Consola\Consola.csproj", "{68C5BE68-0EF6-4D55-BC21-190235CB3195}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestValoresNulos", "TestValoresNulos\TestValoresNulos.csproj", "{BE69AE13-7F2F-4C68-B32D-B1F84411D09C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{68C5BE68-0EF6-4D55-BC21-190235CB3195}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68C5BE68-0EF6-4D55-BC21-190235CB3195}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68C5BE68-0EF6-4D55-BC21-190235CB3195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE69AE13-7F2F-4C68-B32D-B1F84411D09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE69AE13-7F2F-4C68-B32D-B1F84411D09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE69AE13-7F2F-4C68-B32D-B1F84411D09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE69AE13-7F2F-4C68-B32D-B1F84411D09C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
