@@ -59,11 +59,22 @@ namespace Clases_Instanciables
             return cadena.ToString();
         }
 
+        /// <summary>
+        /// Hace publicos los datos de la Universidad
+        /// </summary>
+        /// <returns>String con los datos de la Universidad</returns>
         public override string ToString()
         {
             return Universidad.MostrarDatos(this);
         }
 
+
+        /// <summary>
+        /// Compara Universidad con alumno. Seran iguales si el alumno está inscripto en la universidad.
+        /// </summary>
+        /// <param name="g">Universidad</param>
+        /// <param name="a">Alumno</param>
+        /// <returns>True si son iguales. False si no lo son</returns>
         public static bool operator ==(Universidad g, Alumno a)
         {
             foreach (Alumno aux in g.Alumnos)
@@ -77,6 +88,12 @@ namespace Clases_Instanciables
         public static bool operator !=(Universidad g, Alumno a)
         { return !(g == a); }
 
+        /// <summary>
+        /// Compara Universidad con Profesor. Seran iguales si el profesor da clases en la Universidad
+        /// </summary>
+        /// <param name="g">Universidad</param>
+        /// <param name="i">Profesor</param>
+        /// <returns>true si son iguales. False si no lo son</returns>
         public static bool operator ==(Universidad g, Profesor i)
         {
             foreach (Profesor profesor in g.Instructores)
@@ -90,6 +107,12 @@ namespace Clases_Instanciables
         public static bool operator !=(Universidad g, Profesor i)
         { return !(g == i); }
 
+        /// <summary>
+        /// Comapra Universidad con clase. 
+        /// </summary>
+        /// <param name="u">Universidad</param>
+        /// <param name="clase">Clase</param>
+        /// <returns>La igualdad retorna el primer profesor que puede dar la clase.</returns>
         public static Profesor operator ==(Universidad u, EClases clase)
         {
             foreach (Profesor profesor in u.Instructores)
@@ -109,6 +132,13 @@ namespace Clases_Instanciables
             throw new SinProfesorException("Todos los profesores de la lista pueden dar la clase");
         }
 
+
+        /// <summary>
+        /// Se agrega una clase a una Universidad. Se genera una nueva jornada con un profesor y una lista de alumnos
+        /// </summary>
+        /// <param name="g">Universidad</param>
+        /// <param name="clase">Clase</param>
+        /// <returns>Universidad con la clase agregada</returns>
         public static Universidad operator +(Universidad g, EClases clase)
         {
             Profesor profesor = g == clase;
@@ -123,6 +153,12 @@ namespace Clases_Instanciables
             return g;
         }
 
+        /// <summary>
+        /// Se agrega un alumno a una Uniersidad 
+        /// </summary>
+        /// <param name="u">Universidad</param>
+        /// <param name="a">Alumno</param>
+        /// <returns>Univeridad con alumno agregado</returns>
         public static Universidad operator +(Universidad u, Alumno a)
         {
             if (u == a)
@@ -131,6 +167,13 @@ namespace Clases_Instanciables
                 u.Alumnos.Add(a);
             return u;
         }
+
+        /// <summary>
+        /// Se agrega un profesor a una Universidad
+        /// </summary>
+        /// <param name="u">Universidad</param>
+        /// <param name="i">Alumno</param>
+        /// <returns>Universidad con profesor agregado</returns>
         public static Universidad operator +(Universidad u, Profesor i)
         {
             if (u != i)
@@ -138,6 +181,11 @@ namespace Clases_Instanciables
             return u;
         }
 
+        /// <summary>
+        /// Serializa los datos de la Universidad en un xml
+        /// </summary>
+        /// <param name="uni">Universidad</param>
+        /// <returns>True si se pudo guardar con exito</returns>
         public static bool Guardar(Universidad uni)
         {
             string path = "Universidad.xml";
@@ -153,6 +201,10 @@ namespace Clases_Instanciables
             return true;
         }
 
+        /// <summary>
+        /// Lee los datos previamente serializados
+        /// </summary>
+        /// <returns>Objeto de tipo Universidad</returns>
         public static Universidad Leer()
         {
             string path = "Universidad.xml";

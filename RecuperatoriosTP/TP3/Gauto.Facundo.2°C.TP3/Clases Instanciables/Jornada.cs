@@ -49,6 +49,13 @@ namespace Clases_Instanciables
             { this.instructor = value; }
         }
 
+
+        /// <summary>
+        /// Compara una jornada con un alumno. Seran iguales si el alumno participa de la clase
+        /// </summary>
+        /// <param name="j">Jornada</param>
+        /// <param name="a">Alumno</param>
+        /// <returns>Tru si son iguales. Flase si no lo son</returns>
         public static bool operator ==(Jornada j, Alumno a)
         {
             foreach (Alumno alumno in j.Alumnos)
@@ -64,6 +71,12 @@ namespace Clases_Instanciables
             return !(j == a);
         }
 
+        /// <summary>
+        /// Agrega alumnos a la clase, validando que no esten cargados previamente
+        /// </summary>
+        /// <param name="j">Jornada</param>
+        /// <param name="a">Alumno</param>
+        /// <returns>Joranda con el alumno agregado o lanza una excepcion si el alumno ya se encontraba</returns>
         public static Jornada operator +(Jornada j, Alumno a)
         {
             if (j == a)
@@ -77,6 +90,10 @@ namespace Clases_Instanciables
             return j;
         }
 
+        /// <summary>
+        /// Muestra los datos de la jornada
+        /// </summary>
+        /// <returns>String con los datos de la Jornada</returns>
         public override string ToString()
         {
             StringBuilder cadena = new StringBuilder();
@@ -93,6 +110,11 @@ namespace Clases_Instanciables
             return cadena.ToString();
         }
 
+        /// <summary>
+        /// Guarda los datos de la jornada en un archivo de texto
+        /// </summary>
+        /// <param name="jornada">Jornada a guardar</param>
+        /// <returns></returns>
         public static bool Guardar(Jornada jornada)
         {
             Texto txt = new Texto();
@@ -100,6 +122,10 @@ namespace Clases_Instanciables
             return txt.Guardar(path,jornada.ToString());
         }
 
+        /// <summary>
+        /// Lee los datos de un archivo de texto y los devuelve
+        /// </summary>
+        /// <returns>String con los datos de la jornada</returns>
         public static string Leer()
         {
             Texto txt = new Texto();

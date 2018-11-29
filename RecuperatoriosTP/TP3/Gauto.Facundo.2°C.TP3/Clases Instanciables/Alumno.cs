@@ -23,6 +23,11 @@ namespace Clases_Instanciables
         {
             this.estadoCuenta = estadoCuenta;
         }
+
+        /// <summary>
+        /// Muestra los datos del Alumno
+        /// </summary>
+        /// <returns>String con los datos del Alumno</returns>
         protected override string MostrarDatos()
         {
             StringBuilder cadena = new StringBuilder();
@@ -31,6 +36,13 @@ namespace Clases_Instanciables
             cadena.AppendFormat("\nEstado de cuenta: {0}",this.estadoCuenta);
             return cadena.ToString();
         }
+
+        /// <summary>
+        /// Compara un alumno con unna clase. Seran iguales si el alumno toma esa clase y su estado no es deudor.
+        /// </summary>
+        /// <param name="a">Alumno</param>
+        /// <param name="clase">Clase</param>
+        /// <returns>True si son iguales. False si no son iguales</returns>
         public static bool operator ==(Alumno a, EClases clase)
         {
             if(a.claseQueToma == clase && a.estadoCuenta != Alumno.EEstadoCuenta.Deudor)
@@ -38,14 +50,31 @@ namespace Clases_Instanciables
 
             return false;
         }
+
+        /// <summary>
+        /// Compara la desigualdad entre un alumno y una clase. Seran distintos si el alumno no toma la clase
+        /// </summary>
+        /// <param name="a">Alumno</param>
+        /// <param name="clase">Clase</param>
+        /// <returns>True si son distintos. False si no son distintos</returns>
         public static bool operator !=(Alumno a, EClases clase)
         {
-            return !(a == clase);
+            return !(a.claseQueToma == clase);
         }
+
+        /// <summary>
+        /// Muestra la clase que toma el alumno
+        /// </summary>
+        /// <returns>String con la clase que toma el Alumno</returns>
         protected override string ParticiparEnClase()
         {
             return "TOMA CLASE DE " + this.claseQueToma;
         }
+
+        /// <summary>
+        /// Have publicos los datos del Alumno
+        /// </summary>
+        /// <returns>String con los datos del alumno</returns>
         public override string ToString()
         {
             return this.MostrarDatos();

@@ -32,6 +32,10 @@ namespace Clases_Instanciables
             this.clasesDelDia.Enqueue((EClases)random.Next(3));
         }
 
+        /// <summary>
+        /// Muestra los datos del Profesor
+        /// </summary>
+        /// <returns>String con los datos del profesor</returns>
         protected override string MostrarDatos()
         {
             StringBuilder cadena = new StringBuilder();
@@ -40,6 +44,10 @@ namespace Clases_Instanciables
             return cadena.ToString();
         }
 
+        /// <summary>
+        /// Muestra la clase que da el profesor
+        /// </summary>
+        /// <returns>String con la clase que da el profesor</returns>
         protected override string ParticiparEnClase()
         {
             StringBuilder cadena = new StringBuilder();
@@ -51,11 +59,21 @@ namespace Clases_Instanciables
             return cadena.ToString();
         }
 
+        /// <summary>
+        /// Hace publicos los datos del profesor
+        /// </summary>
+        /// <returns>String con los datos del profesor</returns>
         public override string ToString()
         {
             return this.MostrarDatos();
         }
 
+        /// <summary>
+        /// Compara la igualdad entre un profesor y una clase. Seran iguales si el profesor da esa clase
+        /// </summary>
+        /// <param name="i">Profesor</param>
+        /// <param name="clase">Clase</param>
+        /// <returns>True si son iguales. False si son distintos</returns>
         public static bool operator ==(Profesor i, EClases clase)
         {
             if (i.clasesDelDia.Contains(clase))
