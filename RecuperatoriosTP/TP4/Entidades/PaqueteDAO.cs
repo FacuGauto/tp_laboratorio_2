@@ -17,7 +17,7 @@ namespace Entidades
         /// </summary>
         static PaqueteDAO()
         {
-            string connectionStr = "Data Source=DESKTOP-FG;Initial Catalog=correo-sp-2017;Integrated Security=True";
+            string connectionStr = "Data Source=.\\SQLEXPRESS;Initial Catalog=correo-sp-2017;Integrated Security=True";
 
             conexion = new SqlConnection(connectionStr);
             comando = new SqlCommand();
