@@ -17,8 +17,8 @@ namespace Entidades
         /// </summary>
         static PaqueteDAO()
         {
-            string connectionStr = "Data Source=.\\SQLEXPRESS; Initial Catalog=correo-sp-2017; Integrated Security=True;";
-            
+            string connectionStr = "Data Source=DESKTOP-FG;Initial Catalog=correo-sp-2017;Integrated Security=True";
+
             conexion = new SqlConnection(connectionStr);
             comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.Text;
@@ -36,9 +36,9 @@ namespace Entidades
             {
                 string alumno = "Gauto Facundo";
                 conexion.Open();
-                comando.CommandText = string.Format("INSERT INTO Paquetes (direccionEntrega,trackinkID,alumno) VALUES ({0},{1},{2})", p.DireccionEntrega, p.TranckingID, alumno);
-                comando.ExecuteNonQuery();
 
+                comando.CommandText = string.Format("INSERT INTO Paquetes (direccionEntrega, trackingID, alumno) VALUES ('{0}','{1}','{2}')", p.DireccionEntrega, p.TranckingID, alumno);
+                comando.ExecuteNonQuery();
             }
             catch (Exception e)
             {
