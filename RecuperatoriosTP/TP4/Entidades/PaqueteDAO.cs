@@ -18,6 +18,7 @@ namespace Entidades
         static PaqueteDAO()
         {
             string connectionStr = "Data Source=.\\SQLEXPRESS; Initial Catalog=correo-sp-2017; Integrated Security=True;";
+            
             conexion = new SqlConnection(connectionStr);
             comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.Text;

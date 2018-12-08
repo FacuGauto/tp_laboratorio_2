@@ -25,7 +25,7 @@ namespace TestUnitarios
         {
             Correo correo = new Correo();
             Paquete paqueteUno = new Paquete("Alsina 234","000045454545");
-            Paquete paqueteDos = new Paquete("Alsina 468", "000078787878");
+            Paquete paqueteDos = new Paquete("Alsina 468", "000045554545");
 
             correo += paqueteUno;
             correo += paqueteDos;

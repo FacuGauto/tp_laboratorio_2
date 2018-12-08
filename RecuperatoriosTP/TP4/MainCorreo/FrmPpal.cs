@@ -46,6 +46,11 @@ namespace MainCorreo
             }
         }
 
+        /// <summary>
+        /// Muestra los datos en rtbMostrar y los guarda en un txt
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="elemento"></param>
         private void MostrarInformacion<T>(IMostrar<T> elemento)
         {
             if (!(elemento is null))
@@ -128,9 +133,8 @@ namespace MainCorreo
             this.MostrarInformacion<List<Paquete>>((IMostrar<List<Paquete>>)correo);
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             Paquete paquete = (Paquete)this.lstEstadoEntregado.SelectedItem;
             this.rtbMostrar.Text = string.Format("{0}", paquete.ToString());
         }

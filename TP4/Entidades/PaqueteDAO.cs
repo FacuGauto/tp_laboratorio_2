@@ -35,6 +35,7 @@ namespace Entidades
             {
                 string alumno = "Gauto Facundo";
                 conexion.Open();
+
                 comando.CommandText = string.Format("INSERT INTO Paquetes (direccionEntrega,trackinkID,alumno) VALUES ({0},{1},{2})", p.DireccionEntrega, p.TranckingID, alumno);
                 comando.ExecuteNonQuery();
 

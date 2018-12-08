@@ -33,14 +33,14 @@
             this.lblEstadoEntregado = new System.Windows.Forms.Label();
             this.lblEstadoEnViaje = new System.Windows.Forms.Label();
             this.lstEstadoEntregado = new System.Windows.Forms.ListBox();
+            this.cmsListas = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lstEstadoEnViaje = new System.Windows.Forms.ListBox();
             this.lstEstadoIngresado = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEstadoIngresado = new System.Windows.Forms.Label();
             this.rtbMostrar = new System.Windows.Forms.RichTextBox();
             this.mtxtTrackingID = new System.Windows.Forms.MaskedTextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.cmsListas = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.groupBox1.Controls.Add(this.lstEstadoEntregado);
             this.groupBox1.Controls.Add(this.lstEstadoEnViaje);
             this.groupBox1.Controls.Add(this.lstEstadoIngresado);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblEstadoIngresado);
             this.groupBox1.Location = new System.Drawing.Point(12, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(764, 303);
@@ -93,6 +93,21 @@
             this.lstEstadoEntregado.Size = new System.Drawing.Size(233, 238);
             this.lstEstadoEntregado.TabIndex = 5;
             // 
+            // cmsListas
+            // 
+            this.cmsListas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mostrarToolStripMenuItem});
+            this.cmsListas.Name = "contextMenuStrip1";
+            this.cmsListas.Size = new System.Drawing.Size(116, 26);
+            this.cmsListas.Text = "Mostrar Todo";
+            // 
+            // mostrarToolStripMenuItem
+            // 
+            this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
+            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.mostrarToolStripMenuItem.Text = "Mostrar";
+            this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
+            // 
             // lstEstadoEnViaje
             // 
             this.lstEstadoEnViaje.FormattingEnabled = true;
@@ -109,14 +124,14 @@
             this.lstEstadoIngresado.Size = new System.Drawing.Size(227, 238);
             this.lstEstadoIngresado.TabIndex = 0;
             // 
-            // label1
+            // lblEstadoIngresado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Ingresado";
+            this.lblEstadoIngresado.AutoSize = true;
+            this.lblEstadoIngresado.Location = new System.Drawing.Point(3, 24);
+            this.lblEstadoIngresado.Name = "lblEstadoIngresado";
+            this.lblEstadoIngresado.Size = new System.Drawing.Size(54, 13);
+            this.lblEstadoIngresado.TabIndex = 1;
+            this.lblEstadoIngresado.Text = "Ingresado";
             // 
             // rtbMostrar
             // 
@@ -141,21 +156,6 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(178, 20);
             this.txtDireccion.TabIndex = 4;
-            // 
-            // cmsListas
-            // 
-            this.cmsListas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.cmsListas.Name = "contextMenuStrip1";
-            this.cmsListas.Size = new System.Drawing.Size(116, 26);
-            this.cmsListas.Text = "Mostrar Todo";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
-            this.toolStripMenuItem1.Text = "Mostrar";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // btnAgregar
             // 
@@ -236,7 +236,7 @@
         private System.Windows.Forms.Label lblEstadoEnViaje;
         private System.Windows.Forms.ListBox lstEstadoEntregado;
         private System.Windows.Forms.ListBox lstEstadoEnViaje;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEstadoIngresado;
         private System.Windows.Forms.ListBox lstEstadoIngresado;
         private System.Windows.Forms.RichTextBox rtbMostrar;
         private System.Windows.Forms.MaskedTextBox mtxtTrackingID;
@@ -247,6 +247,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblTrackingID;
         private System.Windows.Forms.Button btnMostarTodos;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
     }
 }
