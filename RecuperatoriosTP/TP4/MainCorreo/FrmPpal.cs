@@ -78,7 +78,7 @@ namespace MainCorreo
             string trackingID = this.mtxtTrackingID.Text;
             string direccion = this.txtDireccion.Text;
 
-            Paquete paquete = new Paquete(trackingID, direccion);
+            Paquete paquete = new Paquete(direccion, trackingID);
 
             paquete.InformarEsatdo += Paquete_InformarEsatdo;
             paquete.DataBase += this.fallaDataBase;
